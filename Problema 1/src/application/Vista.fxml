@@ -28,12 +28,17 @@
             <Font name="System Bold" size="28.0" />
          </font>
       </Label>
-      <Button fx:id="btnOperacion" layoutX="112.0" layoutY="81.0" mnemonicParsing="false" onAction="#nuevaOperacion" text="Nueva Operacion">
+      <Button fx:id="btnOperacion" layoutX="45.0" layoutY="81.0" mnemonicParsing="false" onAction="#nuevaOperacion" text="Nueva Operacion">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="btnEvaluar" layoutX="419.0" layoutY="81.0" mnemonicParsing="false" onAction="#evaluar" prefHeight="39.0" prefWidth="137.0" text="Evaluar">
+      <Button fx:id="btnEvaluar" layoutX="500.0" layoutY="81.0" mnemonicParsing="false" onAction="#evaluar" prefHeight="39.0" prefWidth="137.0" text="Evaluar">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnActualizzar" layoutX="272.0" layoutY="81.0" mnemonicParsing="false" onAction="#actualizar" prefHeight="39.0" prefWidth="137.0" text="Actualizar">
          <font>
             <Font size="18.0" />
          </font>

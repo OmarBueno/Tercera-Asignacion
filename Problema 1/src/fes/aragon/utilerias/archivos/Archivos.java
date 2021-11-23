@@ -8,6 +8,7 @@ import javafx.scene.control.TextArea;
 import javafx.stage.*;
 
 public class Archivos {
+	private static String dato;
 
 	public static File buscar(TextArea txtTexto) {
 		FileChooser fileChooser = new FileChooser();
@@ -66,6 +67,14 @@ public class Archivos {
 				}
 			}
 		}
+	}
+
+	public static String getDato() {
+		return dato;
+	}
+
+	public static void setDato(String dato) {
+		Archivos.dato = dato;
 	}
 
 }

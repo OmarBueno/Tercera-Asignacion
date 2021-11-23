@@ -34,7 +34,10 @@ public class VistaController {
 	private Button btnOperacion;
 	@FXML
 	private Button btnEvaluar;
+	@FXML
+	private Button btnActualizzar;
 	private File archivoTxt;
+	public static boolean insertar = false;
 
 	// Event Listener on Button[#btnCargar].onAction
 	@FXML
@@ -47,14 +50,14 @@ public class VistaController {
 	@FXML
 	public void guardarArchivo(ActionEvent event) {
 		Archivos.guardar(txtTexto);
-		
+
 	}
 
 	// Event Listener on Button[#btnOperacion].onAction
 	@FXML
-	public void nuevaOperacion(ActionEvent event) throws IOException {
+	public void nuevaOperacion(ActionEvent event) throws IOException, InterruptedException {
 		Stage stage = new Stage();
-		Parent root=FXMLLoader.load(getClass().getResource("Formulario.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("Formulario.fxml"));
 		Scene scene = new Scene(root);
 		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 		stage.setScene(scene);
@@ -62,31 +65,30 @@ public class VistaController {
 	}
 
 	@FXML
-	void evaluar(ActionEvent event) {
-		String aux = txtTexto.getText();
-		Cartera c1 = new Cartera();
-		if (archivoTxt != null) {
-			try {
-				File archivo = archivoTxt;
-				FileReader fr;
-				fr = new FileReader(archivo);
-				BufferedReader br = new BufferedReader(fr);
-				String linea;
-				while ((linea = br.readLine()) != null) {
-					String[] arr = linea.split(",");
-					Accion accion = new Accion(arr[0], Integer.parseInt(arr[1]), Double.parseDouble(arr[2]),
-							Integer.parseInt(arr[3]));
-					c1.insertar(accion);
-				}
-				System.out.println("Ganancia Total de compra y venta de acciones: $" + c1.getGananciaTotal());
-			} catch (FileNotFoundException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-
+	void actualizar(ActionEvent event) {
+		if (Archivos.getDato() != null) {
+			txtTexto.appendText(Archivos.getDato() + "\n");
+			Archivos.setDato(null);
 		} else {
-			JOptionPane.showMessageDialog(null, "Error al cargar archivo", "Erros", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(null, "No hay datos para actualizar", "Error", JOptionPane.ERROR_MESSAGE);
+		}
+	}
+
+	@FXML
+	void evaluar(ActionEvent event) {
+		if (!txtTexto.getText().isEmpty()) {
+			String aux = txtTexto.getText();
+			String datos[] = aux.split("\n");
+			Cartera c1 = new Cartera();
+			for (String string : datos) {
+				String[] arr = string.split(",");
+				Accion accion = new Accion(arr[0], Integer.parseInt(arr[1]), Double.parseDouble(arr[2]),
+						Integer.parseInt(arr[3]));
+				c1.insertar(accion);
+			}
+			System.out.println("Ganancia Total de compra y venta de acciones: $" + c1.getGananciaTotal());
+		} else {
+			JOptionPane.showMessageDialog(null, "Debe introducir datos", "Error", JOptionPane.ERROR_MESSAGE);
 		}
 	}
 }
