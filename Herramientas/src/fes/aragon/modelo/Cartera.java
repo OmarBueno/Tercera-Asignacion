@@ -2,6 +2,11 @@ package fes.aragon.modelo;
 
 import fes.aragon.utilerias.dinamicas.Cola.Cola;
 
+/**
+ * Clase que sirve para guardar acciones y evaluar su tipo 
+ * @author omar1
+ *
+ */
 public class Cartera extends Cola<Accion> {
 	private int acciones = 0;
 	private double gananciaTotal = 0.0;
@@ -9,6 +14,11 @@ public class Cartera extends Cola<Accion> {
 	public Cartera() {
 	}
 
+	/**
+	 * Metodo que inserta una accion y evalua su tipo
+	 * 
+	 * @param dato Accion
+	 */
 	public void insertar(Accion dato) {
 		if (dato.getTipo().equals("C") || dato.getTipo().equals("c")) {
 			acciones += dato.getCantidad();
@@ -53,18 +63,38 @@ public class Cartera extends Cola<Accion> {
 		}
 	}
 
+	/**
+	 * Metodo que devuelve la cantidad de accio
+	 * 
+	 * @return Cantidad de acciones
+	 */
 	public int getAcciones() {
 		return acciones;
 	}
 
+	/**
+	 * Metodo que indica la antidad de acciones
+	 * 
+	 * @param acciones Numero de acciones
+	 */
 	public void setAcciones(int acciones) {
 		this.acciones = acciones;
 	}
 
+	/**
+	 * Metodo que devuelve el valor de la gananacia total
+	 * 
+	 * @return Ganancia total de la operacion
+	 */
 	public double getGananciaTotal() {
 		return gananciaTotal;
 	}
 
+	/**
+	 * Netodo que indica la ganancia total
+	 * 
+	 * @param ganancia Total Ganancia total
+	 */
 	public void setGananciaTotal(double gananciaTotal) {
 		this.gananciaTotal = gananciaTotal;
 	}

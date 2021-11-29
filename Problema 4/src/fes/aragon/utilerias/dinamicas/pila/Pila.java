@@ -2,15 +2,16 @@ package fes.aragon.utilerias.dinamicas.pila;
 
 import fes.aragon.utilerias.dinamicas.listasimple.ListaSimple;
 
-	/**
-	 * Clase que crea una Pila
-	 *
-	 * @author Equipo 9 Bueno Zaldivar Omar Alejandro y Sol Martinez Edith
-	 *
-	 * @param <E> Tipo de datos a almacenar
-	 */
+/**
+ * Clase que crea una Pila
+ *
+ * @author Equipo 9 Bueno Zaldivar Omar Alejandro y Sol Martinez Edith
+ *
+ * @param <E> Tipo de datos a almacenar
+ */
 public class Pila<E> {
 	private ListaSimple<E> pila = new ListaSimple<>();
+	private ListaSimple<E> elementos = new ListaSimple<>();
 
 	/**
 	 * elimina los elementos de la pila
@@ -47,7 +48,7 @@ public class Pila<E> {
 		E tmp = null;
 		if (!estaVacia()) {
 			tmp = pila.obtenerCola();
-			pila.eliminarEnCola();
+			pila.eliminarEnCola();;
 		} else {
 			throw new Exception("Pila Vacia");
 		}
@@ -69,6 +70,19 @@ public class Pila<E> {
 			throw new Exception("Pila Vacia");
 		}
 		return tmp;
+	}
+
+	public void imprimir() throws Exception {
+		while(!pila.esVacia()) {
+			elementos.agregarEnCola(extraer());
+		}
+		for (int i = 0; i < elementos.getLongitud(); i++) {
+			System.out.println(elementos.obtenerNodo(i));
+		}
+		for (int i = elementos.getLongitud()-1; i >=0; i--) {
+			insertar(elementos.obtenerNodo(i));
+		}
+
 	}
 
 }

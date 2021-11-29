@@ -5,6 +5,7 @@ import fes.aragon.utilerias.dinamicas.Cola.Cola;
 public class Cartera extends Cola<Accion> {
 	private int acciones = 0;
 	private double gananciaTotal = 0.0;
+	public String instrucciones = "";
 
 	public Cartera() {
 	}
@@ -13,11 +14,19 @@ public class Cartera extends Cola<Accion> {
 		if (dato.getTipo().equals("C") || dato.getTipo().equals("c")) {
 			acciones += dato.getCantidad();
 			super.insertar(dato);
-			System.out.println("El dia: " + dato.getDia() + " se compraron: " + dato.getCantidad() + " acciones por: $"
-					+ dato.getPrecio() + " ahora cuenta con: " + acciones + " acciones");
+			/*
+			 * System.out.println("El dia: " + dato.getDia() + " se compraron: " +
+			 * dato.getCantidad() + " acciones por: $" + dato.getPrecio() +
+			 * " ahora cuenta con: " + acciones + " acciones");
+			 */
+			instrucciones += "El dia: " + dato.getDia() + " se compraron: " + dato.getCantidad() + " acciones por: $"
+					+ dato.getPrecio() + " ahora cuenta con: " + acciones + " acciones" + "\n";
 		} else {
 			if (acciones >= dato.getCantidad()) {
-				System.out.println("El dia: " + dato.getDia() + " se vendieron: " + dato.getCantidad() + " acciones");
+				// System.out.println("El dia: " + dato.getDia() + " se vendieron: " +
+				// dato.getCantidad() + " acciones");
+				instrucciones += "El dia: " + dato.getDia() + " se vendieron: " + dato.getCantidad() + " acciones"
+						+ "\n";
 				double ganancia = 0.0;
 				int vendidas = dato.getCantidad();
 				acciones -= vendidas;
@@ -28,14 +37,24 @@ public class Cartera extends Cola<Accion> {
 						if (vendidas >= aux.getCantidad()) {
 							ganancia += (aux.getCantidad() * diferencia);
 							vendidas -= aux.getCantidad();
-							System.out.println("Se vendieron: " + aux.getCantidad() + " acciones con una ganancia de: $"
-									+ diferencia + " por accion. Acciones del dia: " + aux.getDia());
+							/*
+							 * System.out.println("Se vendieron: " + aux.getCantidad() +
+							 * " acciones con una ganancia de: $" + diferencia +
+							 * " por accion. Acciones del dia: " + aux.getDia());
+							 */
+							instrucciones += "Se vendieron: " + aux.getCantidad() + " acciones con una ganancia de: $"
+									+ diferencia + " por accion. Acciones del dia: " + aux.getDia() + "\n";
 							extraer();
 						} else {
 							int sobrantes = aux.getCantidad() - vendidas;
 							ganancia += (vendidas * diferencia);
-							System.out.println("Se vendieron: " + vendidas + " Acciones con una ganancia de: "
-									+ diferencia + " por accion Acciones del dia: " + aux.getDia());
+							/*
+							 * System.out.println("Se vendieron: " + vendidas +
+							 * " Acciones con una ganancia de: " + diferencia +
+							 * " por accion Acciones del dia: " + aux.getDia());
+							 */
+							instrucciones += "Se vendieron: " + vendidas + " Acciones con una ganancia de: "
+									+ diferencia + " por accion Acciones del dia: " + aux.getDia() + "\n";
 							vendidas = 0;
 							Accion restante = elementoSuperior();
 							restante.setCantidad(sobrantes);
@@ -46,9 +65,11 @@ public class Cartera extends Cola<Accion> {
 					}
 				}
 				gananciaTotal += ganancia;
-				System.out.println("Ganancia total de la transaccion: " + ganancia);
+				// System.out.println("Ganancia total de la transaccion: " + ganancia);
+				instrucciones += "Ganancia total de la transaccion: " + ganancia;
 			} else {
-				System.out.println("No cuenta con suficientes acciones para vender");
+				// System.out.println("No cuenta con suficientes acciones para vender");
+				instrucciones += "No cuenta con suficientes acciones para vender";
 			}
 		}
 	}

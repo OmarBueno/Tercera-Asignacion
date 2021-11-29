@@ -1,5 +1,11 @@
 package fes.aragon.modelo;
 
+/**
+ * Accion que representa una accion
+ * 
+ * @author omar1
+ *
+ */
 public class Accion {
 	private String tipo;
 	private int cantidad;

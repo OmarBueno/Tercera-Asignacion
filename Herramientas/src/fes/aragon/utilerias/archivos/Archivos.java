@@ -7,9 +7,21 @@ import javax.swing.JOptionPane;
 import javafx.scene.control.TextArea;
 import javafx.stage.*;
 
+/**
+ * Clase para manejar archivos con JavaFx
+ * 
+ * @author omar1
+ *
+ */
 public class Archivos {
 	private static String dato;
 
+	/**
+	 * Metodo que abre el selector de archivos para seleccionar
+	 * 
+	 * @param txtTexto Area de texto para escribir informacion
+	 * @return Archivo seleccionado
+	 */
 	public static File buscar(TextArea txtTexto) {
 		FileChooser fileChooser = new FileChooser();
 		fileChooser.setTitle("Buscar Archivo");
@@ -45,6 +57,11 @@ public class Archivos {
 		}
 	}
 
+	/**
+	 * Metodo para guardar archivos
+	 * 
+	 * @param txtTexto Area de texto para leer
+	 */
 	public static void guardar(TextArea txtTexto) {
 		FileChooser fileChooser = new FileChooser();
 		fileChooser.setInitialFileName("datos.txt");
@@ -69,10 +86,20 @@ public class Archivos {
 		}
 	}
 
+	/**
+	 * Metodo para recuperar el dato guardado
+	 * 
+	 * @return Dato guardado
+	 */
 	public static String getDato() {
 		return dato;
 	}
 
+	/**
+	 * Metodo para insetar dato
+	 * 
+	 * @param dato Dato a insertar
+	 */
 	public static void setDato(String dato) {
 		Archivos.dato = dato;
 	}

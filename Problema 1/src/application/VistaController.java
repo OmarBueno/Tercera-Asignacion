@@ -86,7 +86,8 @@ public class VistaController {
 						Integer.parseInt(arr[3]));
 				c1.insertar(accion);
 			}
-			System.out.println("Ganancia Total de compra y venta de acciones: $" + c1.getGananciaTotal());
+			JOptionPane.showMessageDialog(null, c1.instrucciones);
+			JOptionPane.showMessageDialog(null,"Ganancia Total de compra y venta de acciones: $" + c1.getGananciaTotal());
 		} else {
 			JOptionPane.showMessageDialog(null, "Debe introducir datos", "Error", JOptionPane.ERROR_MESSAGE);
 		}
