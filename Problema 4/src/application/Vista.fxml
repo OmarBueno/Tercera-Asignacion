@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="413.0" prefWidth="526.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.VistaController">
+   <children>
+      <Label layoutX="169.0" layoutY="14.0" text="Torres de Hanoi">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtDiscos" layoutX="53.0" layoutY="101.0" prefHeight="25.0" prefWidth="72.0" />
+      <Label layoutX="53.0" layoutY="68.0" text="Discos:">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnPasos" layoutX="125.0" layoutY="349.0" mnemonicParsing="false" onAction="#pasos" prefHeight="37.0" prefWidth="89.0" text="Pasos">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnSalir" layoutX="327.0" layoutY="349.0" mnemonicParsing="false" onAction="#salir" prefHeight="37.0" prefWidth="95.0" text="Salir">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Label layoutX="332.0" layoutY="68.0" text="Llamadas:">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmbLLamadas" layoutX="324.0" layoutY="101.0" prefWidth="150.0" />
+      <TextArea fx:id="txtPasos" editable="false" layoutX="53.0" layoutY="148.0" prefHeight="176.0" prefWidth="424.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </TextArea>
+   </children>
+</Pane>

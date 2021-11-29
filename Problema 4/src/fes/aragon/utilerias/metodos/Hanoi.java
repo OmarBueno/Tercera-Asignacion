@@ -1,29 +1,35 @@
-package fes.aragon.test;
+package fes.aragon.utilerias.metodos;
 
 import fes.aragon.utilerias.dinamicas.pila.Pila;
 
-public class Test {
-	public static void main(String[] args) throws Exception {
-		System.out.println("----------Hannoi recursivo-----------");
-		hanoiRecu(5, 'A', 'B', 'C');
-		System.out.println("----------Hannoi iterativo-----------");
-		hanoiIte(5, 'A', 'B', 'C');
-	}
+public class Hanoi {
+	private static String pasos = "";
 
 	public static void hanoiRecu(int n, char origen, char destino, char auxiliar) {
 		if (n == 1) {
-			System.out.println("mover un disco de: " + origen + " a: " + destino);
+			// System.out.println("mover un disco de: " + origen + " a: " + destino);
+			pasos += "Mover un disco de: " + origen + " a: " + destino + "\n";
 		} else {
 			hanoiRecu(n - 1, origen, auxiliar, destino);
-			System.out.println("mover un disco de: " + origen + " a: " + destino);
+			// System.out.println("mover un disco de: " + origen + " a: " + destino);
+			pasos += "Mover un disco de: " + origen + " a: " + destino + "\n";
 			hanoiRecu(n - 1, auxiliar, destino, origen);
 		}
 	}
 
-	public static void hanoiIte(int n, char origen, char destino, char auxiliar) throws Exception {
+	public static String getPasos() {
+		return pasos;
+	}
+
+	public static void setPasos(String pas) {
+		pasos = pas;
+	}
+
+	public static String hanoiIte(int n, char origen, char destino, char auxiliar) throws Exception {
 		int tope = 0;
 		boolean band = false;
 		char varAux;
+		String pasos = "";
 		Pila<Integer> pilaN = new Pila<>();
 		Pila<Character> pilaO = new Pila<>();
 		Pila<Character> pilaD = new Pila<>();
@@ -40,7 +46,8 @@ public class Test {
 				destino = auxiliar;
 				auxiliar = varAux;
 			}
-			System.out.println("Mover un disco de: " + origen + " a: " + destino);
+			// System.out.println("Mover un disco de: " + origen + " a: " + destino);
+			pasos += "Mover un disco de: " + origen + " a: " + destino + "\n";
 			band = true;
 			if (tope > 0) {
 				n = pilaN.extraer();
@@ -48,7 +55,8 @@ public class Test {
 				destino = pilaD.extraer();
 				auxiliar = pilaX.extraer();
 				tope--;
-				System.out.println("Mover un disco de: " + origen + " a: " + destino);
+				// System.out.println("Mover un disco de: " + origen + " a: " + destino);
+				pasos += "Mover un disco de: " + origen + " a: " + destino + "\n";
 				n--;
 				varAux = origen;
 				origen = auxiliar;
@@ -56,5 +64,6 @@ public class Test {
 				band = false;
 			}
 		}
+		return pasos;
 	}
 }
