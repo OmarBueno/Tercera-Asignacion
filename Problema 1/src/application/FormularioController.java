@@ -44,11 +44,11 @@ public class FormularioController implements Initializable {
 		} else {
 			aux = "V";
 		}
-		aux2 = aux + "," + Integer.parseInt(txtCantidad.getText()) + ","
-				+ Double.parseDouble(txtPrecio.getText()) + "," + txtDia.getValue().getDayOfMonth();
+		aux2 = aux + "," + Integer.parseInt(txtCantidad.getText()) + "," + Double.parseDouble(txtPrecio.getText()) + ","
+				+ txtDia.getValue().getDayOfMonth();
 		Archivos.setDato(aux2);
 		cancelar(event);
-		
+
 	}
 
 	// Event Listener on Button[#btnCancelar].onAction

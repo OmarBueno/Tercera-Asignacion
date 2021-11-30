@@ -11,7 +11,7 @@ import fes.aragon.utilerias.dinamicas.listasimple.ListaSimple;
  */
 public class Pila<E> {
 	private ListaSimple<E> pila = new ListaSimple<>();
-	private ListaSimple<E> elementos = new ListaSimple<>();
+	// private ListaSimple<E> elementos = new ListaSimple<>();
 
 	/**
 	 * elimina los elementos de la pila
@@ -48,7 +48,8 @@ public class Pila<E> {
 		E tmp = null;
 		if (!estaVacia()) {
 			tmp = pila.obtenerCola();
-			pila.eliminarEnCola();;
+			pila.eliminarEnCola();
+			;
 		} else {
 			throw new Exception("Pila Vacia");
 		}
@@ -72,17 +73,20 @@ public class Pila<E> {
 		return tmp;
 	}
 
-	public void imprimir() throws Exception {
-		while(!pila.esVacia()) {
+	public String imprimir() throws Exception {
+		String info="";
+		ListaSimple<E> elementos = new ListaSimple<>();
+		while (!pila.esVacia()) {
 			elementos.agregarEnCola(extraer());
 		}
 		for (int i = 0; i < elementos.getLongitud(); i++) {
 			System.out.println(elementos.obtenerNodo(i));
+			info+=elementos.obtenerNodo(i)+"\n";
 		}
-		for (int i = elementos.getLongitud()-1; i >=0; i--) {
+		for (int i = elementos.getLongitud() - 1; i >= 0; i--) {
 			insertar(elementos.obtenerNodo(i));
 		}
-
+		return info;
 	}
 
 }

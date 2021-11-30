@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 
 import java.io.BufferedReader;
@@ -87,8 +88,13 @@ public class VistaController {
 						Integer.parseInt(arr[3]));
 				c1.insertar(accion);
 			}
-			JOptionPane.showMessageDialog(null, c1.instrucciones);
-			JOptionPane.showMessageDialog(null,"Ganancia Total de compra y venta de acciones: $" + c1.getGananciaTotal());
+			Alert alert = new Alert(Alert.AlertType.INFORMATION);
+			alert.setHeaderText(null);
+			alert.setTitle("Evaluacion");
+			alert.setContentText(c1.instrucciones + "\n" + "Ganancia Total de compra y venta de acciones: $"
+					+ c1.getGananciaTotal());
+			alert.showAndWait();
+
 		} else {
 			JOptionPane.showMessageDialog(null, "Debe introducir datos", "Error", JOptionPane.ERROR_MESSAGE);
 		}
