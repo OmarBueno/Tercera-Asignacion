@@ -40,6 +40,10 @@ public class VistaController implements Initializable {
 					Hanoi.hanoiRecu(Integer.parseInt(txtDiscos.getText()), 'A', 'B', 'C');
 					txtPasos.clear();
 					txtPasos.setText(Hanoi.getPasos());
+				} else if (cmbLLamadas.getSelectionModel().getSelectedIndex() == 2) {
+					txtDiscos.setText("5");
+					txtPasos.clear();
+					txtPasos.setText(Hanoi.hanoiIteVisual(5, 'A', 'B', 'C'));
 				} else {
 					txtPasos.clear();
 					txtPasos.setText(Hanoi.hanoiIte(Integer.parseInt(txtDiscos.getText()), 'A', 'B', 'C'));
@@ -70,7 +74,7 @@ public class VistaController implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		ObservableList<String> items = FXCollections.observableArrayList();
-		items.addAll("Recursivas", "Iterativas");
+		items.addAll("Recursivas", "Iterativas", "Visual 5 discos");
 		cmbLLamadas.setItems(items);
 		cmbLLamadas.getSelectionModel().select(0);
 	}

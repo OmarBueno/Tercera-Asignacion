@@ -150,6 +150,7 @@ public class Test02 {
 	}
 
 	public static void hanoiRecu(int n, char origen, char destino, char auxiliar) {
+
 		if (n == 1) {
 			System.out.println("mover un disco de: " + origen + " a: " + destino);
 		} else {

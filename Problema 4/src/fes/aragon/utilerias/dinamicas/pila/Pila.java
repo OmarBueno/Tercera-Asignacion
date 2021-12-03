@@ -80,7 +80,7 @@ public class Pila<E> {
 			elementos.agregarEnCola(extraer());
 		}
 		for (int i = 0; i < elementos.getLongitud(); i++) {
-			System.out.println(elementos.obtenerNodo(i));
+			//System.out.println(elementos.obtenerNodo(i));
 			info+=elementos.obtenerNodo(i)+"\n";
 		}
 		for (int i = elementos.getLongitud() - 1; i >= 0; i--) {
