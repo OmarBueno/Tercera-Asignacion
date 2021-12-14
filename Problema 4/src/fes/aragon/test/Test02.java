@@ -1,11 +1,11 @@
 package fes.aragon.test;
 
-import fes.aragon.utilerias.dinamicas.pila.Pila;
+import fes.aragon.utilerias.dinamicas.pila.PilaHanoi;
 
 public class Test02 {
 
 	public static void main(String[] args) throws Exception {
-		Pila<Integer> pila = new Pila<>();
+		PilaHanoi<Integer> pila = new PilaHanoi<>();
 		pila.insertar(1);
 		pila.insertar(2);
 		pila.insertar(3);
@@ -17,9 +17,9 @@ public class Test02 {
 			System.out.println(pila.extraer());
 		}
 		String datos[] = { "*********", " ******* ", "  *****  ", "   ***   ", "    *    " };
-		Pila<String> pila1 = new Pila<>();
-		Pila<String> pila2 = new Pila<>();
-		Pila<String> pila3 = new Pila<>();
+		PilaHanoi<String> pila1 = new PilaHanoi<>();
+		PilaHanoi<String> pila2 = new PilaHanoi<>();
+		PilaHanoi<String> pila3 = new PilaHanoi<>();
 		for (String dato : datos) {
 			pila1.insertar(dato);
 		}
@@ -34,16 +34,16 @@ public class Test02 {
 		boolean band = false;
 		char varAux;
 		String datos[] = { "*********", " ******* ", "  *****  ", "   ***   ", "    *    " };
-		Pila<String> pila1 = new Pila<>();
-		Pila<String> pila2 = new Pila<>();
-		Pila<String> pila3 = new Pila<>();
+		PilaHanoi<String> pila1 = new PilaHanoi<>();
+		PilaHanoi<String> pila2 = new PilaHanoi<>();
+		PilaHanoi<String> pila3 = new PilaHanoi<>();
 		for (String dato : datos) {
 			pila1.insertar(dato);
 		}
-		Pila<Integer> pilaN = new Pila<>();
-		Pila<Character> pilaO = new Pila<>();
-		Pila<Character> pilaD = new Pila<>();
-		Pila<Character> pilaX = new Pila<>();
+		PilaHanoi<Integer> pilaN = new PilaHanoi<>();
+		PilaHanoi<Character> pilaO = new PilaHanoi<>();
+		PilaHanoi<Character> pilaD = new PilaHanoi<>();
+		PilaHanoi<Character> pilaX = new PilaHanoi<>();
 		while (n > 0 && band == false) {
 			while (n > 1) {
 				tope++;

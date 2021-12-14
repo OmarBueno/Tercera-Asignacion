@@ -1,6 +1,6 @@
 package fes.aragon.test;
 
-import fes.aragon.utilerias.dinamicas.pila.Pila;
+import fes.aragon.utilerias.dinamicas.pila.PilaHanoi;
 
 public class Test {
 	public static void main(String[] args) throws Exception {
@@ -24,10 +24,10 @@ public class Test {
 		int tope = 0;
 		boolean band = false;
 		char varAux;
-		Pila<Integer> pilaN = new Pila<>();
-		Pila<Character> pilaO = new Pila<>();
-		Pila<Character> pilaD = new Pila<>();
-		Pila<Character> pilaX = new Pila<>();
+		PilaHanoi<Integer> pilaN = new PilaHanoi<>();
+		PilaHanoi<Character> pilaO = new PilaHanoi<>();
+		PilaHanoi<Character> pilaD = new PilaHanoi<>();
+		PilaHanoi<Character> pilaX = new PilaHanoi<>();
 		while (n > 0 && band == false) {
 			while (n > 1) {
 				tope++;
