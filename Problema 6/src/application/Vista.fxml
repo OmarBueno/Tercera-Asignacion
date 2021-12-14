@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="653.0" prefWidth="958.0" style="-fx-background-color: #DAF7A6;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.VistaController">
+   <children>
+      <Label layoutX="331.0" layoutY="14.0" text="Algoritmo de dijkstra ">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="350.0" fitWidth="569.0" layoutX="186.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Media/dijkstra%20.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="69.0" layoutY="374.0" text="Inicio">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="287.0" layoutY="374.0" text="Fin">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tctInicio" alignment="CENTER" layoutX="25.0" layoutY="427.0" prefHeight="52.0" prefWidth="158.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtFin" alignment="CENTER" layoutX="227.0" layoutY="427.0" prefHeight="52.0" prefWidth="158.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextArea fx:id="txtCamino" editable="false" layoutX="471.0" layoutY="427.0" prefHeight="200.0" prefWidth="451.0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </TextArea>
+      <Label layoutX="582.0" layoutY="374.0" text="Camino mas corto">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnEvaluar" layoutX="54.0" layoutY="579.0" mnemonicParsing="false" onAction="#evaluar" text="Evaluar">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnSalir" layoutX="257.0" layoutY="579.0" mnemonicParsing="false" onAction="#salir" prefHeight="48.0" prefWidth="99.0" text="Salir">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>
