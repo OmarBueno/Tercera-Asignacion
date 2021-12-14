@@ -3,7 +3,7 @@ package fes.aragon.except;
 /**
  * Clase que maneja excepciones
  * 
- * @author omar1
+ * @author Equipo 9 Sol Martinez Edith, Bueno Zaldivar Omar Alejandro
  *
  */
 public class IndiceFueraDeRango extends Exception {

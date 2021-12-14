@@ -11,6 +11,10 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="Jars/Problema 2.jar"/>
+	<classpathentry kind="lib" path="Jars/Problema 2.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/Problema%202/Jars/Doc/Docs.zip!/"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

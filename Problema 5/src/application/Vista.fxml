@@ -2,46 +2,57 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #E0FFFC;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.VistaController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="579.0" prefWidth="824.0" style="-fx-background-color: #E0FFFC;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.VistaController">
    <children>
-      <Label layoutX="88.0" layoutY="14.0" text="Evaluación de una expresión prefija ">
+      <Label layoutX="190.0" layoutY="14.0" text="Evaluación de una expresión prefija ">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>
       </Label>
-      <TextField fx:id="txtExpresion" layoutX="203.0" layoutY="121.0" prefHeight="50.0" prefWidth="199.0">
+      <TextField fx:id="txtExpresion" layoutX="46.0" layoutY="197.0" prefHeight="50.0" prefWidth="199.0">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
       </TextField>
-      <Label layoutX="241.0" layoutY="70.0" text="Expresión">
+      <Label layoutX="88.0" layoutY="126.0" text="Expresión">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>
       </Label>
-      <TextField fx:id="txtResultado" editable="false" layoutX="199.0" layoutY="238.0" prefHeight="50.0" prefWidth="199.0">
+      <TextField fx:id="txtResultado" editable="false" layoutX="46.0" layoutY="383.0" prefHeight="50.0" prefWidth="199.0">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
       </TextField>
-      <Label layoutX="237.0" layoutY="187.0" text="Resultado">
+      <Label layoutX="87.0" layoutY="313.0" text="Resultado">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>
       </Label>
-      <Button fx:id="btnEvaluar" layoutX="111.0" layoutY="337.0" mnemonicParsing="false" onAction="#evaluar" text="Evaluar">
+      <Button fx:id="btnEvaluar" layoutX="182.0" layoutY="522.0" mnemonicParsing="false" onAction="#evaluar" text="Evaluar">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="btnSalir" layoutX="396.0" layoutY="337.0" mnemonicParsing="false" onAction="#salir" prefHeight="39.0" prefWidth="86.0" text="Salir">
+      <Button fx:id="btnSalir" layoutX="543.0" layoutY="522.0" mnemonicParsing="false" onAction="#salir" prefHeight="39.0" prefWidth="86.0" text="Salir">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Button>
+      <TextArea fx:id="txtArbol" editable="false" layoutX="291.0" layoutY="126.0" prefHeight="354.0" prefWidth="504.0">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </TextArea>
+      <Label layoutX="465.0" layoutY="77.0" text="Arbol Binario">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
    </children>
 </Pane>

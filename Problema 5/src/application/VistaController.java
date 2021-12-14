@@ -1,9 +1,9 @@
 package application;
 
 import javafx.fxml.FXML;
-
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 import javax.swing.JOptionPane;
@@ -20,6 +20,8 @@ public class VistaController {
 	private Button btnEvaluar;
 	@FXML
 	private Button btnSalir;
+	@FXML
+	private TextArea txtArbol;
 
 	// Event Listener on Button[#btnEvaluar].onAction
 	@FXML
@@ -29,10 +31,18 @@ public class VistaController {
 		String datos[] = expresion.split(" ");
 		try {
 			arbol.insertarExperion(datos);
+			arbol.recorridoAmplitud();
 			txtResultado.clear();
 			txtResultado.setText(String.valueOf(arbol.evaluar()));
+
+			txtArbol.clear();
+			txtArbol.setText(arbol.getConstruccion());
 		} catch (Exception e) {
-			JOptionPane.showMessageDialog(null, "Error");
+			Alert alert = new Alert(Alert.AlertType.ERROR);
+			alert.setHeaderText(null);
+			alert.setTitle("Error en la expresion");
+			alert.setContentText("Revise la expresión, los caracteres deben estar separados por espacios");
+			alert.showAndWait();
 
 		}
 	}

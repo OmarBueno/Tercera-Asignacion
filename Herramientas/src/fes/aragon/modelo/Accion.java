@@ -3,7 +3,7 @@ package fes.aragon.modelo;
 /**
  * Accion que representa una accion
  * 
- * @author omar1
+ * @author Equipo 9 Sol Martinez Edith, Bueno Zaldivar Omar Alejandro
  *
  */
 public class Accion {
