@@ -1,7 +1,7 @@
 package fes.aragon.modelo;
 
 /**
- * Accion que representa una accion
+ * Clase que representa una accion
  * 
  * @author Equipo 9 Sol Martinez Edith, Bueno Zaldivar Omar Alejandro
  *
